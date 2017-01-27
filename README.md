@@ -1,0 +1,2 @@
+# Linux_php_sh
+基于Linux的php开发环境即php服务搭建脚本
