@@ -153,7 +153,7 @@ fi
 rotate_line &
 disown $!
 
-./configure --prefix=/usr/local/php5 --with-mysql=/usr/local/mysql --enable-fpm  --enable-mbstring --with-mcrypt --with-mhash --with-config-file-path=/usr/local/php5/etc --with-mysqli=/usr/local/mysql/bin/mysql_config > $NULL
+# ./configure --prefix=/usr/local/php5 --with-mysql=/usr/local/mysql --enable-fpm  --enable-mbstring --with-mcrypt --with-mhash --with-config-file-path=/usr/local/php5/etc --with-mysqli=/usr/local/mysql/bin/mysql_config > $NULL
 
 #./configure --prefix=/usr/local/php5 \ 	#安装路仅
 #--with-mysql=/usr/local/mysql\ 			#指定MySQL位置
@@ -164,6 +164,16 @@ disown $!
 #--with-mysqli=/usr/local/mysql/bin/mysql_config
 #result_info $? "configure" "32"
 
+./configure --prefix=/usr/local/php-5.5.7 \
+--with-config-file-path=/usr/local/php-5.5.7/etc \
+--with-bz2 --with-curl \
+--enable-ftp --enable-sockets --disable-ipv6 --with-gd \
+--with-jpeg-dir=/usr/local --with-png-dir=/usr/local \
+--with-freetype-dir=/usr/local --enable-gd-native-ttf \
+--with-iconv-dir=/usr/local --enable-mbstring --enable-calendar \
+--with-gettext --with-libxml-dir=/usr/local --with-zlib \
+--with-pdo-mysql=mysqlnd --with-mysqli=mysqlnd --with-mysql=mysqlnd \
+--enable-dom --enable-xml --enable-fpm --with-libdir=lib64 --enable-bcmath
 
 make > $NULL
 result_info $? "make" "33"
